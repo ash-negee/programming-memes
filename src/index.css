@@ -1,0 +1,16 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  background-color: #ffa2003d;
+}
+
+.frame,
+.page-title {
+  border: 5px solid #000;
+  background-color: #eb79063a;
+}
+
+.meme {
+  width: 100%;
+  height: auto;
+}
