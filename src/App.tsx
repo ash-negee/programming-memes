@@ -1,3 +1,4 @@
+// require('dotenv').config();
 import { useState, useEffect, type ReactElement } from "react";
 import axios from 'axios';
 import Button from "react-bootstrap/Button";
@@ -34,11 +35,13 @@ function App(): ReactElement {
     return () => clearInterval(timer); // Cleanup on unmount or key change.
   }, [key]); // Restart effect when `key` changes.
 
+  console.log(import.meta.env.VITE_API_KEY)
+
   const options = {
     method: 'GET',
     url: 'https://programming-memes-images.p.rapidapi.com/v1/memes',
     headers: {
-      'x-rapidapi-key': '3894440cebmsha3d5a39e4148a2ep18a835jsnc62ed387c29c',
+      'x-rapidapi-key': import.meta.env.VITE_API_KEY,
       'x-rapidapi-host': 'programming-memes-images.p.rapidapi.com'
     }
   };
