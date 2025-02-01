@@ -18,8 +18,8 @@ function App(): ReactElement {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [hasErr, setErr] = useState<boolean>(false);
   const [memes, setMemes] = useState<Meme[]>([]);
-  const [timeLeft, setTimeLeft] = useState(65); // Initialize timer with 65 seconds.
-  const [key, setKey] = useState(0); // Key to trigger restart.
+  const [timeLeft, setTimeLeft] = useState(65);
+  const [key, setKey] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -30,19 +30,18 @@ function App(): ReactElement {
         }
         return prevTime - 1;
       });
+      return () => clearInterval(timer);
     }, 1000);
 
     return () => clearInterval(timer); // Cleanup on unmount or key change.
   }, [key]); // Restart effect when `key` changes.
-
-  console.log(import.meta.env.VITE_API_KEY)
 
   const options = {
     method: 'GET',
     url: 'https://programming-memes-images.p.rapidapi.com/v1/memes',
     headers: {
       'x-rapidapi-key': import.meta.env.VITE_API_KEY,
-      'x-rapidapi-host': 'programming-memes-images.p.rapidapi.com'
+      'x-rapidapi-host': import.meta.env.VITE_API_HOST
     }
   };
 
@@ -76,7 +75,13 @@ function App(): ReactElement {
       {memes.map((meme) => {
         return (
           <div key={meme.id} className="p-3 mb-3 frame">
-            <Image className="meme" src={meme.image} alt="Download Image ⤵️" width={300} height={500} />
+            <Image
+              alt={meme.modified}
+              className="w-100 h-auto"
+              src={meme.image}
+              height={500}
+              width={300}
+            />
           </div>
         );
       })}
@@ -88,7 +93,7 @@ function App(): ReactElement {
         size="lg"
         onClick={handleBtnOnClick}
       >
-        {hasErr ? 'Something went wrong, please try again after some time...' : isLoading ? 'Loading...' : timeLeft === 0 ? 'Load more...' : `Finding memes for you, please wait for ${timeLeft}s.`}
+        {hasErr ? 'Something went wrong, please try again after some time...' : isLoading ? 'Loading...' : timeLeft === 0 ? 'Load more...' : `Finding best memes for you, please wait for ${timeLeft}s.`}
       </Button>
 
       <small className="mt-3 frame w-100 text-center p-2">Made with 🤍 by - Ash</small>
