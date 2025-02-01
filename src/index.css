@@ -1,12 +1,19 @@
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 0.625rem;
-  background-color: #eb79063a;
+:root {
+  --theme-bg-color: #fef9c3;
+  --theme-foreground-color: #fff;
+  --meme-frame-color: #000;
 }
 
-.frame,
-.page-title {
-  border: 0.313rem solid #000;
-  background-color: #eb79063a;
-  box-shadow: 0.313rem 0.313rem;
+body {
+  font-family: "Inter", serif;
+  letter-spacing: 0.15rem;
+  word-spacing: 0.15rem;
+  padding: 0.85rem;
+  background-color: var(--theme-bg-color);
+}
+
+.meme-frame {
+  border: 0.25rem solid var(--meme-frame-color);
+  background-color: var(--theme-foreground-color);
+  box-shadow: 0.5rem 0.5rem;
 }

@@ -23,18 +23,11 @@ function App(): ReactElement {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prevTime) => {
-        if (prevTime <= 1) {
-          clearInterval(timer);
-          return 0;
-        }
-        return prevTime - 1;
-      });
-      return () => clearInterval(timer);
+      setTimeLeft((prevTime) => (prevTime <= 1 ? 0 : prevTime - 1));
     }, 1000);
 
-    return () => clearInterval(timer); // Cleanup on unmount or key change.
-  }, [key]); // Restart effect when `key` changes.
+    return () => clearInterval(timer);
+  }, [key]);
 
   const options = {
     method: 'GET',
@@ -70,11 +63,12 @@ function App(): ReactElement {
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center p-1">
-      <h3 className="page-title w-100 text-center p-2 fw-bold">Programming memes...</h3>
+      <h1 className="w-100 text-center p-2 fw-bold">Programming memes...</h1>
+      <h6 className="mb-4 text-center">Because debugging is 99% crying and 1% coding</h6>
 
       {memes.map((meme) => {
         return (
-          <div key={meme.id} className="p-3 mb-3 frame">
+          <div key={meme.id} className="p-2 mb-3 meme-frame">
             <Image
               alt={meme.modified}
               className="w-100 h-auto"
@@ -82,21 +76,22 @@ function App(): ReactElement {
               height={500}
               width={300}
             />
+            <hr />
           </div>
         );
       })}
 
       <Button
         disabled={timeLeft !== 0 || hasErr}
-        className="w-100 frame"
-        variant="outline-dark"
+        className="w-75 meme-frame rounded-0"
+        variant="outline-white"
         size="lg"
         onClick={handleBtnOnClick}
       >
-        {hasErr ? 'Something went wrong, please try again after some time...' : isLoading ? 'Loading...' : timeLeft === 0 ? 'Load more...' : `Finding best memes for you, please wait for ${timeLeft}s.`}
+        {hasErr ? 'Something went wrong, please try again after some time...' : isLoading ? 'Loading...' : timeLeft === 0 ? 'Load more...' : <small>Finding best memes for you, please wait for {timeLeft}s.</small>}
       </Button>
 
-      <small className="mt-3 frame w-100 text-center p-2">Made with 🤍 by - Ash</small>
+      <small className="mt-4 text-center">Made with 🤍 by - Ash</small>
     </div>
   );
 }
