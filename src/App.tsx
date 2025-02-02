@@ -64,11 +64,11 @@ function App(): ReactElement {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center p-1">
       <h1 className="w-100 text-center p-2 fw-bold">Programming memes...</h1>
-      <h6 className="mb-4 text-center">Because debugging is 99% crying and 1% coding</h6>
+      <h6 className="mb-4 text-center lh-lg">Because debugging is 99% crying and 1% coding</h6>
 
       {memes.map((meme) => {
         return (
-          <div key={meme.id} className="p-2 mb-3 meme-frame">
+          <div key={meme.id} className="p-2 mb-3 meme-frame mb-5">
             <Image
               alt={meme.modified}
               className="w-100 h-auto"

@@ -15,5 +15,5 @@ body {
 .meme-frame {
   border: 0.25rem solid var(--meme-frame-color);
   background-color: var(--theme-foreground-color);
-  box-shadow: 0.5rem 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0 0 #000;
 }
