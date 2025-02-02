@@ -34,9 +34,10 @@ npm install
 yarn install
 ```
 
-3. Create a `.env` file in the root directory and add your RapidAPI key:
+3. Create a `.env` file in the root directory and add your RapidAPI key and host:
 ```env
-REACT_APP_RAPIDAPI_KEY=your_api_key_here
+VITE_API_KEY = 'your_api_key'
+VITE_API_HOST = 'your_api_host_rul'
 ```
 
 ## Dependencies
@@ -53,9 +54,9 @@ REACT_APP_RAPIDAPI_KEY=your_api_key_here
 ```
 src/
   ├── App.tsx          # Main application component
-  ├── types/           # TypeScript interfaces and types
-  ├── styles/          # CSS/SCSS files
-  └── components/      # React components
+  ├── index.css        # TypeScript interfaces and types
+  ├── main.tsx        # TypeScript interfaces and types
+  ├── vite-env.d.ts/          # CSS/SCSS files
 ```
 
 ## Usage
@@ -63,12 +64,12 @@ src/
 To start the development server:
 
 ```bash
-npm start
+npm run dev
 # or
-yarn start
+yarn run dev
 ```
 
-The application will be available at `http://localhost:3000`
+The application will be available at `http://localhost:port`
 
 ## API Integration
 
