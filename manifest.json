@@ -1,9 +1,9 @@
 {
   "name": "Programming Memes",
-  "short_name": "Programming Memes",
-  "start_url": "/",
+  "short_name": "Pro Memes",
+  "start_url": "/programming-memes/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#fef9c3",
   "theme_color": "#fef9c3",
   "icons": [
     {
