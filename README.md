@@ -79,8 +79,8 @@ const options = {
   method: 'GET',
   url: 'https://programming-memes-images.p.rapidapi.com/v1/memes',
   headers: {
-    'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
-    'x-rapidapi-host': 'programming-memes-images.p.rapidapi.com'
+    'x-rapidapi-key': import.meta.env.VITE_YOUR_API_KEY,
+    'x-rapidapi-host': import.meta.env.VITE_YOUR_API_HOST
   }
 };
 ```
