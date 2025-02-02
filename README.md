@@ -24,7 +24,7 @@ Before running this project, make sure you have:
 1. Clone the repository:
 ```bash
 git clone git@github.com:ash-negee/programming-memes.git
-cd programming-memes-app
+cd programming-memes
 ```
 
 2. Install dependencies:
