@@ -23,7 +23,7 @@ Before running this project, make sure you have:
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone git@github.com:ash-negee/programming-memes.git
 cd programming-memes-app
 ```
 
