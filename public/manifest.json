@@ -1,7 +1,7 @@
   {
     "name": "Programming Memes",
     "short_name": "Pro Memes",
-    "start_url": "https://ash-negee.github.io/programming-memes/",
+    "start_url": "/programming-memes/",
     "display": "standalone",
     "background_color": "#fef9c3",
     "theme_color": "#fef9c3",
