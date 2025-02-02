@@ -1,20 +1,20 @@
-{
-  "name": "Programming Memes",
-  "short_name": "Pro Memes",
-  "start_url": "/programming-memes/",
-  "display": "standalone",
-  "background_color": "#fef9c3",
-  "theme_color": "#fef9c3",
-  "icons": [
-    {
-      "src": "./icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "./icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+  {
+    "name": "Programming Memes",
+    "short_name": "Pro Memes",
+    "start_url": "https://ash-negee.github.io/programming-memes/",
+    "display": "standalone",
+    "background_color": "#fef9c3",
+    "theme_color": "#fef9c3",
+    "icons": [
+      {
+        "src": "./icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
